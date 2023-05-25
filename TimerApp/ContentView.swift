@@ -20,7 +20,7 @@ struct ContentView: View {
             TimerView()
                 .tabItem {
                     Image(systemName: "timer")
-                    Text("Time")
+                    Text("Timer")
                 }
                 .tag(Tab.timer)
 
@@ -53,10 +53,10 @@ struct TimerView: View {
 
     var body: some View {
         VStack {
-            Image(systemName: "clock.fill")
-                .font(.largeTitle)
+//            Image(systemName: "clock.fill")
+//                .font(.largeTitle)
             Text("Time View")
-                .font(.title)
+                .font(.largeTitle)
 
             HStack {
                 Picker("Hours", selection: $selectedHour) {
@@ -87,12 +87,12 @@ struct TimerView: View {
                 .labelsHidden()
             }
 
-            HStack(spacing: 20) { // Added spacing between buttons
+            HStack(spacing: 120) { // Added spacing between buttons
                 Button(action: {
                     cancelTimer()
                 }) {
                     Text("Cancel")
-                        .padding(20) // Increased padding
+                        .padding(30) // Increased padding
                         .background(Color.red)
                         .foregroundColor(.white)
                         .font(.headline)
@@ -104,14 +104,14 @@ struct TimerView: View {
                     startTimer()
                 }) {
                     Text("Start")
-                        .padding(20) // Increased padding
+                        .padding(30) // Increased padding
                         .background(Color.green)
                         .foregroundColor(.white)
                         .font(.headline)
                         .clipShape(Circle()) // Make the button round
                 }
             }
-            .padding(.top, 20)
+            .padding(.top, 30)
         }
     }
 
